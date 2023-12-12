@@ -1,10 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Student</title>
 </head>
 <body>
-$END$
+<h1>List Students</h1>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>GPA</th>
+        <th>DOB</th>
+        <th>Phone</th>
+    </tr>
+    <tr th:each = "student: ${students}">
+        <td th:text = "${student.name}"></td>
+        <td th:text = "${student.gpa}"></td>
+        <td th:text = "${student.dob}"></td>
+        <td th:text = "${student.phone}"></td>
+        <td>
+            <button><a th:href="@{/students/edit/{id}(id=${student.id})}">Update</a></button>
+            <button><a th:href="@{/students/{id}(id=${student.id})}">Delete</a></button>
+        </td>
+    </tr>
+</table>
+<hr />
+<h1>Actions</h1>
+<a th:href="@{/students/new}">Add new Student</a>
 </body>
 </html>

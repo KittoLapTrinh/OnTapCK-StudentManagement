@@ -1,4 +1,4 @@
-package kiet.com.example.ontapck.model;
+package kiet.com.example.ontapck.models;
 
 import jakarta.persistence.*;
 import lombok.*;

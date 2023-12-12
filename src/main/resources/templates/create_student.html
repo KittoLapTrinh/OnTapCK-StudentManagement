@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Create Student</title>
 </head>
 <body>
-$END$
+<h1>Create New Student</h1>
+<form th:action="@{/students}" th:object="${student}" method="post">
+    <input placeholder="name" type="text" name="name" th:field="*{name}" /> <br />
+    <input placeholder="gpa" type="text" name="gpa" th:field="*{gpa}" /> <br />
+    <input placeholder="dob" type="date" name="dob" th:field="*{dob}" /> <br />
+    <input placeholder="phone" type="text" name="phone" th:field="*{phone}" /> <br />
+    <button type="submit">Submit</button>
+</form>
+
 </body>
 </html>
